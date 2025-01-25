@@ -1,3 +1,6 @@
+mod data;
+
 fn main() {
-    println!("Hello, world!");
+    let data = data::get_data();
+    println!("{:#?}", data);
 }
