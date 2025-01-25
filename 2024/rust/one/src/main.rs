@@ -29,7 +29,7 @@ fn get_ordered_sum(data: &str) -> i32 {
 }
 
 fn main() {
-    let sum = get_ordered_sum(&data::ADVENT_DATA.to_string());
+    let sum = get_ordered_sum(&data::ADVENT_DATA);
 
     println!("{:#?}", sum);
 }
