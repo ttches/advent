@@ -1,5 +1,4 @@
-pub fn get_data() {
-    let data = "47078   87818
+pub const ADVENT_DATA: &'static str = "47078   87818
 99261   15906
 44723   23473
 87598   26876
@@ -999,30 +998,3 @@ pub fn get_data() {
 47369   11182
 34359   84179
 45592   15347";
-
-    let mut left_vec: Vec<i32> = Vec::new();
-    let mut right_vec: Vec<i32> = Vec::new();
-
-    // split string into two columns
-    data.split("\n").for_each(|line| {
-        let pair: Vec<i32> = line
-            .split_whitespace()
-            .filter_map(|num| num.parse::<i32>().ok())
-            .collect();
-
-        left_vec.push(pair[0]);
-        right_vec.push(pair[1]);
-    });
-
-    left_vec.sort();
-    right_vec.sort();
-
-    // get sum of absolute difference between the two sorted columns
-    let sum: i32 = left_vec
-        .iter()
-        .enumerate()
-        .map(|(index, value)| (value - right_vec[index]).abs())
-        .sum();
-
-    println!("{:#?}", sum);
-}
