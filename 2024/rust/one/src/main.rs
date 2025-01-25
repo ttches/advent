@@ -1,6 +1,6 @@
 mod data;
 
-fn get_ordered_sum(data: String) -> i32 {
+fn get_ordered_sum(data: &str) -> i32 {
     let mut left_vec: Vec<i32> = Vec::new();
     let mut right_vec: Vec<i32> = Vec::new();
 
@@ -29,7 +29,7 @@ fn get_ordered_sum(data: String) -> i32 {
 }
 
 fn main() {
-    let sum = get_ordered_sum(data::ADVENT_DATA.to_string());
+    let sum = get_ordered_sum(&data::ADVENT_DATA.to_string());
 
     println!("{:#?}", sum);
 }
